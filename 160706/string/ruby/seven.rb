@@ -2,23 +2,16 @@
 str = "WorldHello"
 num = 5
 def move_local(str, num)
-  str_first = str[0]
-  for i in 0...num
-    str[i - 1] = str[i]
+  t = ""
+  strlen = str.length
+  for j in 0...num
+    t = str[0]
+    for k in 0...strlen
+      str[k] = str[k + 1]
+    end
+    str[strlen - 1] = t
   end
-  str_first << num
-  # str << num
-
-  # t = ""
-  # strlen = str.length
-  # for j in 0...num
-  #   t = str[0]
-  #   for k in 0...strlen
-  #     str[k] = str[k + 1]
-  #   end
-  #   str[strlen - 1] = t
-  # end
-  # str
+  str
 end
 converted_value = move_local(str, num)
 p converted_value

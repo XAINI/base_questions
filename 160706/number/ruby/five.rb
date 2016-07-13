@@ -1,19 +1,23 @@
 # 5. 实现一个方法，传入数字n，顺序打印1到n中所有质数
 number = 9
 def sort_print_prime_number(num)
-  # (1..num).select do |i|
-  #   for j in (1..i)
-  #     break if (i % j == 0)
-  #   end
-  # end
+  new_ary = []
   for i in 1..num
+    flag = false
     for j in 1..i
-      p i % j == 0
-      if i % j == 0
-        p i
-        break
+      if j != 1 && j != i
+        if i % j == 0
+          flag = true
+          break
+        end
       end
     end
-  end
+    if flag == false
+      p i
+      new_ary.push(i)
+    end
+  end 
+  new_ary
 end
-p sort_print_prime_number(number)
+result = sort_print_prime_number(number)
+p "返回的结构是：#{result}"

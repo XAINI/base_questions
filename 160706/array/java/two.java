@@ -7,7 +7,6 @@
 public class two{
   public static void main(String[] args) {
     String str = "[1, [2, [3, 4, [5, 6]]]]";
-    str = str.replaceAll("[(\\[|\\])]", "");
     String[] aryStr = new String[]{};
     aryStr = exchange(str);
     for (int k = 0; k < aryStr.length; k ++) {

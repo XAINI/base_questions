@@ -2,9 +2,11 @@
 str = "你好世界"
 pattern = /^[\u4e00-\u9fa50-9A-Za-z]/
 def RegExp_match_str_first(string, pattern)
-  str1 = string.scan(pattern)
-  str = string.index(str1[0])
-  str
+  index = (pattern =~ string)
+  if index == nil
+    index = -1
+  end
+  index
 end
 
 matched_result = RegExp_match_str_first(str, pattern)

@@ -6,13 +6,12 @@ public class four{
     String str = "你好中国";
     String resultStr = "";
     resultStr = reverseStr(str);
-    // System.out.println(resultStr);
+    System.out.println(resultStr);
   }
   public static String reverseStr(String str){
     String newStr = "";
-    for (int i = str.length() - 1; i >= 0; i ++) {
-      System.out.println(str.charAt(i));
-
+    for (int i = str.length() - 1; i >= 0; i --) {
+      newStr = newStr + str.charAt(i);
     }
     return newStr;
   }

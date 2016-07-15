@@ -7,7 +7,7 @@ def print_rectangle(num)
     for i in 1..num
       print "*"
     end
-    p "*"
+    puts ""
   end
 end
 

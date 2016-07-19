@@ -2,13 +2,20 @@
 
 num = 97645
 
+# 将 num 转换为四进制数 并返回结果 
 convert_decimal = (num)->
-  n = 5
-  while(true)
-    n = n / 2
-    console.log n
-    if n == 0
+  num_str = ""
+  while 1
+    new_num = num % 4
+    num_str += new_num.toString()
+    num = Math.floor( num / 4 )
+    if num == 0
       break
-    
+  reverse_num_str = num_str.split("").reverse().join("")
+  num_decimal_coversion = parseInt(reverse_num_str)
+  num_decimal_coversion
 
-convert_decimal(num)
+
+result = convert_decimal(num)
+
+console.log result

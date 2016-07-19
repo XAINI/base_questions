@@ -3,8 +3,9 @@
 num = 75629
 
 def decimal_number_convert(num)
-  converted_val = num.to_s(4)
-  converted_val
+  converted_decimal_str = num.to_s(4)
+  conversion_decimal_num = converted_decimal_str.to_i
+  conversion_decimal_num
 end
 
 converted_result_val = decimal_number_convert(num)

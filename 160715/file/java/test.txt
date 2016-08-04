@@ -1,0 +1,68 @@
+// 1. 实现一个方法，传入一个文件名filename与一个字符串，将字符串写入到本文件夹的文件filename中
+import java.io.File;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+
+public class one{
+public static void main(String[] args) {
+String filename = "test";
+String str = "Hello world";
+writeIntoFile(filename, str);
+}
+
+public static void writeIntoFile(String filename, String str){
+try{
+File writename = new File(filename + ".txt");
+writename.createNewFile();
+BufferedWriter out = new BufferedWriter(new FileWriter(writename));
+out.write(str);
+out.flush();
+out.close();
+}catch(IOException e){
+e.printStackTrace();
+}
+}
+
+}
+
+
+// 2. 实现一个方法，传入一个文件名filename，读取此文件，并输出其中内容
+import java.io.File;
+import java.io.InputStreamReader;
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.IOException;
+
+public class two{
+public static void main(String[] args) {
+String filename = "test";
+String result = readFile(filename);
+System.out.println(result);
+}
+
+public static String readFile(String filename){
+try{
+File file = new File(filename + ".txt");
+InputStreamReader reader = new InputStreamReader(new FileInputStream(file));
+BufferedReader br = new BufferedReader(reader);
+
+String line = "";
+line = br.readLine();
+StringBuilder builder = new StringBuilder();
+
+while(line != null){
+builder.append(line.trim() + "\n");
+line = br.readLine();
+if (line == null)
+break;
+}
+
+br.close();
+return builder.toString();
+}catch(IOException e){
+e.printStackTrace();
+return null;
+}
+}
+}
